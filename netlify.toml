@@ -1,0 +1,19 @@
+# Netlify configuration — West Coast Capital Mortgage (California)
+# Zero-build static site served from this folder.
+
+[build]
+  base = ""
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
