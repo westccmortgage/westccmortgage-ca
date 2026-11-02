@@ -1,0 +1,32 @@
+[
+  {
+    "n": 35,
+    "slug": "seller-tax-bill-versus-buyer-assessment",
+    "headline": [
+      "SELLER'S TAX BILL.",
+      "NOT YOUR TAX BILL."
+    ],
+    "buyer1": "Seller's property tax is low. Will mine be the same?",
+    "lo": "In California, a purchase usually triggers a new assessment.",
+    "buyer2": "So we should calculate taxes on our purchase?",
+    "insight": "The seller's property-tax bill may not reflect yours.",
+    "detail": "Budget with a post-purchase estimate, not the old tax bill.",
+    "cta": "Check estimated taxes before you buy.",
+    "source": "https://boe.ca.gov/proptaxes/faqs/changeinownership.htm"
+  },
+  {
+    "n": 36,
+    "slug": "private-mortgage-insurance-cancellation",
+    "headline": [
+      "PMI ON THE LOAN.",
+      "FOREVER?"
+    ],
+    "buyer1": "Does private mortgage insurance stay for my entire loan?",
+    "lo": "Many conventional loans allow eligible borrowers to request PMI cancellation.",
+    "buyer2": "What will my servicer need to review?",
+    "insight": "PMI cancellation depends on the loan and conditions.",
+    "detail": "FHA and VA mortgage insurance follow different rules.",
+    "cta": "Ask about mortgage insurance options.",
+    "source": "https://www.consumerfinance.gov/ask-cfpb/when-can-i-remove-private-mortgage-insurance-pmi-from-my-loan-en-202/"
+  }
+]
