@@ -1,0 +1,43 @@
+name: Render Before the Keys media
+on:
+  push:
+    branches:
+      - before-the-keys-media
+    paths:
+      - before-the-keys-source/episodes.json
+      - before-the-keys-source/render.py
+      - .github/workflows/render-before-the-keys.yml
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out isolated media branch
+        uses: actions/checkout@v4
+        with:
+          ref: before-the-keys-media
+          persist-credentials: true
+      - name: Install fonts and video tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-urw-base35 ffmpeg
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install Pillow
+        run: python -m pip install Pillow==11.1.0
+      - name: Render only previously missing MP4 videos
+        run: python before-the-keys-source/render.py
+      - name: Commit generated media without modifying main
+        run: |
+          git add before-the-keys/WCCM_Before_the_Keys_*.mp4
+          if git diff --cached --quiet; then
+            echo "No new media"
+          else
+            git config user.name "wccm-media-builder"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Render Before the Keys media"
+            git push origin HEAD:before-the-keys-media
+          fi
